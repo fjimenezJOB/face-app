@@ -25,7 +25,7 @@ class User(UserMixin, Model):
                 password= generate_password_hash(password)
             )
         except IntegrityError:
-            raise ValueError('User alredy exists')
+            pass
 
 def initialize():
     DATABASE.connect()
